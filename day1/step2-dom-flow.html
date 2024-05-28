@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function firstfun(){
+            console.log("firstfun was called")
+        }
+        function secondfun(){
+            console.log("secondfun was called")
+        }
+        function thirdfun(){
+            console.log("thirdfun was called")
+        }
+        window.addEventListener("load",secondfun);
+        document.addEventListener("DOMContentLoaded",thirdfun);
+    </script>
+</head>
+<body onload="firstfun()">
+    <ul>
+        <li>List 1</li>
+        <li>List 2</li>
+        <li>List 3</li>
+        <li>List 4</li>
+        <li>List 5</li>
+    </ul>
+</body>
+</html>
