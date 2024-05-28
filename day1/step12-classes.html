@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="mylib.js"></script>
+    <script>
+        function Hero(ntitle, nfname, nlname){
+            this.title = ntitle;
+            this.firstname = nfname;
+            this.lastname = nlname;
+           /*  
+            this.fullname = function(){
+            return this.firstname+" "+this.lastname+" inside the class";
+            } 
+            */
+        };
+        Hero.prototype.fullname = function(){
+            return this.firstname+" "+this.lastname;
+        }
+
+        let hero1 = new Hero("Ironman","Tony", "Stark");
+        let hero2 = new Hero("Captain America","Steve", "Rogers");
+        /* hero2.fullname = function(){
+            return "hero2's private full name method";
+        } */
+
+        console.log(hero1.title);// Ironman
+        console.log(hero2.title);// Captain America
+        console.log(hero1.fullname());// 
+        console.log(hero2.fullname());// 
+        console.log(hero1.fullname === hero2.fullname);//false 
+
+        let favnums = [8,6,7,5,2];
+        console.log(favnums.vox());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
