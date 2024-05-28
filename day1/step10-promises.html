@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*        
+       let promise = Promise.resolve("hello the promise was resolved");
+       promise.then()
+       promise.catch()
+       promise.finally() 
+       */
+        let promise = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                var agree = true;
+                if(agree){
+                    resolve("Promise was resolved");
+                }else{
+                    reject("Promise was rejected");
+                }
+            },4000);
+        });
+        function init(){
+            promise
+            .then(function(res){
+                // console.log("res is : ",res);
+                document.getElementsByTagName("span")[0].textContent = res;
+                return res.toUpperCase();
+            })
+            .then(function(res){
+                document.getElementsByTagName("span")[1].textContent = res
+                console.log("res is : ",res)
+                return res.toLowerCase();
+            })
+            .then(function(res){
+                document.getElementsByTagName("span")[2].textContent = res
+                console.log("res is : ",res)
+            })
+            .catch(function(err){
+                console.log("Error is : ",err)
+            })
+            .finally(function(){
+                console.log("Promise is now settled")
+            });
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <h1>As it was returned <span>1</span></h1>
+    <h1>Uppercase <span>2</span></h1>
+    <h1>Lowercase <span>3</span></h1>
+</body>
+</html>

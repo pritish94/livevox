@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        
+        let helperfun1 = function(){
+            return new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        var agree = true;
+                        if(agree){
+                            resolve("First Promise was resolved");
+                        }else{
+                            reject("First Promise was rejected");
+                        }
+                    },2000);
+                })
+        }
+        let helperfun2 = function(){
+            return new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        var agree = true;
+                        if(agree){
+                            resolve("First Promise was resolved");
+                        }else{
+                            reject("First Promise was rejected");
+                        }
+                    },2000);
+                })
+        }
+        let firstPromiseFun = async function(){
+            if(true){
+                return await helperfun1()
+            }else{
+                return await helperfun2()
+            }
+        };
+        */
+        let firstPromiseFun = async function(){
+            return await new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        var agree = true;
+                        if(agree){
+                            resolve("First Promise was resolved");
+                        }else{
+                            reject("First Promise was rejected");
+                        }
+                    },3000);
+                })
+        };
+        let secondPromiseFun = function(){
+            return new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        var agree = false;
+                        if(agree){
+                            resolve("Second Promise was resolved");
+                        }else{
+                            reject("Second Promise was rejected");
+                        }
+                    },2000);
+                })
+        };
+        let thirdPromiseFun = function(){
+            return new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        var agree = true;
+                        if(agree){
+                            resolve("Third Promise was resolved");
+                        }else{
+                            reject("Third Promise was rejected");
+                        }
+                    },1000);
+                })
+        };
+        // all
+        // any
+        // race
+        // allSettled
+        /* 
+        Promise.all([firstPromiseFun(), secondPromiseFun(), thirdPromiseFun()])
+        .then(function(res){
+            console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        .finally(function(){
+            console.log("all promises are settled")
+        })
+        */
+       /* 
+       Promise.any([firstPromiseFun(), secondPromiseFun(), thirdPromiseFun()])
+       .then(function(res){
+           console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        .finally(function(){
+            console.log("all promises are settled")
+        })
+        */
+       /* 
+       Promise.any([firstPromiseFun(), secondPromiseFun(), thirdPromiseFun()])
+       .then(function(res){
+           console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        .finally(function(){
+            console.log("all promises are settled")
+        })
+        */
+       /* 
+       Promise.race([firstPromiseFun(), secondPromiseFun(), thirdPromiseFun()])
+       .then(function(res){
+           console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        .finally(function(){
+            console.log("all promises are settled")
+        })
+        */
+       Promise.allSettled([firstPromiseFun(), secondPromiseFun(), thirdPromiseFun()])
+       .then(function(res){
+           console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        .finally(function(){
+            console.log("all promises are settled")
+        })
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

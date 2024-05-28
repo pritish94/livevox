@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            overflow: auto;
+            border: 1px solid grey;
+            background-color: silver;
+        }
+        .container .box{
+            width: 200px;
+            height: 200px;
+            background-color: grey;
+            color: antiquewhite;
+        }
+    </style>
+    <script>
+        let justiceleague = [
+            { 
+                title : "Batman",
+                power : 6,
+                firstname : "Bruce",
+                lastname : "wayne",
+                city : "Gotham"
+            },
+            { 
+                title : "Superman",
+                power : 7,
+                firstname : "Clark",
+                lastname : "Kent",
+                city : "Metropolis"
+            },
+            { 
+                title : "Flash",
+                power : 5,
+                firstname : "Berry",
+                lastname : "Allen",
+                city : "New York"
+            },
+            { 
+                title : "Wonder Women",
+                power : 7,
+                firstname : "Princess",
+                lastname : "Diana",
+                city : "Amazona"
+            },
+        ];
+        let init = function(){
+            for(let i = 0; i < justiceleague.length; i++){
+                // document.querySelector(".container").innerHTML += '<div class="container"><h1>'+justiceleague[i].title+'</h1><h2>Bruce Wayne</h2><h2>Gotham</h2><input min="0" max="10" value="7" type="range"></div>'
+                document.querySelector(".container").innerHTML += `
+                    <div class="container">
+                        <h1>${justiceleague[i].title.toUpperCase()}</h1>
+                        <h2>${justiceleague[i].firstname+" "+justiceleague[i].lastname}</h2><h2>Gotham</h2>
+                        <input min="0" max="10" value="${justiceleague[i].power}" type="range">
+                    </div>
+                `;
+            }
+        };
+        document.addEventListener("DOMContentLoaded", init)
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>
+<!-- 
+
+<div class="container">
+    <h1>Batman</h1>
+    <h2>Bruce Wayne</h2>
+    <h2>Gotham</h2>
+    <input min="0" max="10" value="7" type="range">
+</div> -->
