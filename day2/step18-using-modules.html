@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        // import what from where
+        /*         
+        import { Pson } from "./modules/person.js";
+        let person = new Pson("i can sing");
+        console.log(person.ability); 
+        */
+
+        import { Hero } from "./modules/hero.js";
+
+        let hero1 = new Hero("Ironman","Tony", "Stark", "I can fly");
+        let hero2 = new Hero("Captain America","Steve", "Rogers", "I can run");
+        console.log(hero1.title);// Ironman
+        console.log(hero2.title);// Captain America
+        console.log(hero1.fullname());// 
+        console.log(hero2.fullname());// 
+        console.log(hero1.fullname === hero2.fullname);//true 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
